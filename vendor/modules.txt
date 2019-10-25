@@ -1,0 +1,10 @@
+# github.com/hashicorp/errwrap v1.0.0
+github.com/hashicorp/errwrap
+# github.com/hashicorp/go-multierror v1.0.0
+github.com/hashicorp/go-multierror
+# github.com/krishicks/yaml-patch v0.0.10
+github.com/krishicks/yaml-patch
+# github.com/pelletier/go-toml v1.5.0
+github.com/pelletier/go-toml
+# gopkg.in/yaml.v2 v2.2.4
+gopkg.in/yaml.v2
