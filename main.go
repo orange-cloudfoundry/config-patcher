@@ -1,18 +1,27 @@
 package main
 
 import (
-	"flag"
 	"github.com/hashicorp/go-multierror"
 	"github.com/orange-cloudfoundry/config-patcher/model"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"path/filepath"
+	"gopkg.in/alecthomas/kingpin.v2"
+	"github.com/prometheus/common/version"
+)
+
+var (
+	patchFlag = kingpin.
+		Flag("patch", "Set in glob format where to find rules for patching config files").
+		Default("/var/vcap/jobs/*/config-patcher/*.yml").
+		String()
 )
 
 func main() {
-	patchFlag := flag.String("patch", "/var/vcap/jobs/*/config-patcher/*.yml", "Set in glob format where to find rules for patching config files")
-	flag.Parse()
+	kingpin.Version(version.Print("config-patcher"))
+	kingpin.HelpFlag.Short('h')
+	kingpin.Parse()
 
 	filesMatch, err := filepath.Glob(*patchFlag)
 	if err != nil {
