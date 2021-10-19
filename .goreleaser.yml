@@ -1,10 +1,9 @@
 project_name: config-patcher
 
 builds:
-  -
-    &template
-    id: binary
+  - id: binary
     binary: config-patcher
+    dir: .
     env:
       - CGO_ENABLED=0
     ldflags:
@@ -28,14 +27,12 @@ archives:
     format: "tar.gz"
     name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
     wrap_in_directory: true
-    files:
-      - LICENSE*
-      - README*
-      - CHANGELOG*
-      - docs/*
-      - assets/*
-      - static/*
-      - templates/*
+  - id: archives-zip
+    builds:
+      - binary
+    format: "zip"
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    wrap_in_directory: true
 
 checksum:
   name_template: checksums.txt
