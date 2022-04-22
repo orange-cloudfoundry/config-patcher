@@ -31,7 +31,7 @@ github.com/matttproud/golang_protobuf_extensions/pbutil
 ## explicit
 # github.com/onsi/gomega v1.7.0
 ## explicit
-# github.com/pelletier/go-toml v1.9.4
+# github.com/pelletier/go-toml v1.9.5
 ## explicit; go 1.12
 github.com/pelletier/go-toml
 # github.com/prometheus/client_golang v1.12.1
