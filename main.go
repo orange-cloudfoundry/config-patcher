@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"path/filepath"
-	"gopkg.in/alecthomas/kingpin.v2"
+	"github.com/alecthomas/kingpin/v2"
 	"github.com/prometheus/common/version"
 )
 
