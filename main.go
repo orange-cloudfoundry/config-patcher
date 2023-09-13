@@ -1,14 +1,14 @@
 package main
 
 import (
+	"github.com/alecthomas/kingpin/v2"
 	"github.com/hashicorp/go-multierror"
 	"github.com/orange-cloudfoundry/config-patcher/model"
-	"gopkg.in/yaml.v2"
-	"os"
-	"log"
-	"path/filepath"
-	"github.com/alecthomas/kingpin/v2"
 	"github.com/prometheus/common/version"
+	"gopkg.in/yaml.v2"
+	"log"
+	"os"
+	"path/filepath"
 )
 
 var (
