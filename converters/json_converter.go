@@ -3,7 +3,7 @@ package converters
 import (
 	"encoding/json"
 	"gopkg.in/yaml.v2"
-	"io/ioutil"
+	"os"
 	"path/filepath"
 	"strings"
 )
@@ -12,7 +12,7 @@ type jsonConverter struct {
 }
 
 func (jsonConverter) ConvertToYaml(configFile string) ([]byte, error) {
-	b, err := ioutil.ReadFile(configFile)
+	b, err := os.ReadFile(configFile)
 	if err != nil {
 		return []byte{}, err
 	}

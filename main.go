@@ -1,14 +1,14 @@
 package main
 
 import (
+	"github.com/alecthomas/kingpin/v2"
 	"github.com/hashicorp/go-multierror"
 	"github.com/orange-cloudfoundry/config-patcher/model"
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
-	"log"
-	"path/filepath"
-	"github.com/alecthomas/kingpin/v2"
 	"github.com/prometheus/common/version"
+	"gopkg.in/yaml.v2"
+	"log"
+	"os"
+	"path/filepath"
 )
 
 var (
@@ -29,7 +29,7 @@ func main() {
 	}
 	patches := make([]model.Patch, 0)
 	for _, file := range filesMatch {
-		b, err := ioutil.ReadFile(file)
+		b, err := os.ReadFile(file)
 		if err != nil {
 			log.Fatal(err)
 		}
