@@ -1,7 +1,7 @@
 package converters
 
 import (
-	"io/ioutil"
+	"os"
 	"path/filepath"
 	"strings"
 )
@@ -10,7 +10,7 @@ type yamlConverter struct {
 }
 
 func (yamlConverter) ConvertToYaml(configFile string) ([]byte, error) {
-	return ioutil.ReadFile(configFile)
+	return os.ReadFile(configFile)
 }
 
 func (yamlConverter) YamlTo(data []byte) ([]byte, error) {

@@ -5,7 +5,6 @@ import (
 	"github.com/krishicks/yaml-patch"
 	"github.com/orange-cloudfoundry/config-patcher/converters"
 	"github.com/orange-cloudfoundry/config-patcher/model"
-	"io/ioutil"
 	"os"
 )
 
@@ -41,7 +40,7 @@ func (c Patcher) Patch() error {
 	if err != nil {
 		return fmt.Errorf("reconvert to config format failed: %s", err)
 	}
-	return ioutil.WriteFile(c.patch.ConfigFile, dataReconvert, configFilePerm)
+	return os.WriteFile(c.patch.ConfigFile, dataReconvert, configFilePerm)
 }
 
 func (c Patcher) configFilePerm() (os.FileMode, error) {
