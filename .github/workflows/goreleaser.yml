@@ -2,7 +2,7 @@ name: goreleaser
 
 on:
   push:
-    # not not consider simplec commit
+    # do not consider simple commit
     branches:
       - '!*'
     # consider only release and pre-release tags
