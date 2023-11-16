@@ -3,7 +3,7 @@ module github.com/orange-cloudfoundry/config-patcher
 go 1.21
 
 require (
-	github.com/alecthomas/kingpin/v2 v2.3.2
+	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/krishicks/yaml-patch v0.0.10
 	github.com/pelletier/go-toml v1.9.5
