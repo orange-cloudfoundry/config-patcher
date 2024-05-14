@@ -32,7 +32,7 @@ func findConverter(patch model.Patch) converter {
 func ConvertConfigToYaml(patch model.Patch) ([]byte, error) {
 	converter := findConverter(patch)
 	if converter == nil {
-		return []byte{}, fmt.Errorf("Could not find converter satisfying config file %s", patch.ConfigFile)
+		return []byte{}, fmt.Errorf("could not find converter satisfying config file: %s", patch.ConfigFile)
 	}
 	return converter.ConvertToYaml(patch.ConfigFile)
 }
@@ -40,7 +40,7 @@ func ConvertConfigToYaml(patch model.Patch) ([]byte, error) {
 func ConfigYamlTo(patch model.Patch, data []byte) ([]byte, error) {
 	converter := findConverter(patch)
 	if converter == nil {
-		return []byte{}, fmt.Errorf("Could not find converter satisfying config file %s", patch.ConfigFile)
+		return []byte{}, fmt.Errorf("could not find converter satisfying config file: %s", patch.ConfigFile)
 	}
 	return converter.YamlTo(data)
 }
