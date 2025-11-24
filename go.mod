@@ -7,7 +7,7 @@ require (
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/krishicks/yaml-patch v0.0.10
 	github.com/pelletier/go-toml v1.9.5
-	github.com/prometheus/common v0.67.3
+	github.com/prometheus/common v0.67.4
 	gopkg.in/yaml.v2 v2.4.0
 )
 
