@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/krishicks/yaml-patch"
+	"os"
+
+	yamlpatch "github.com/krishicks/yaml-patch"
 	"github.com/orange-cloudfoundry/config-patcher/converters"
 	"github.com/orange-cloudfoundry/config-patcher/model"
-	"os"
 )
 
 type Patcher struct {
@@ -48,7 +49,11 @@ func (c Patcher) configFilePerm() (os.FileMode, error) {
 	if err != nil {
 		return 0, err
 	}
-	defer f.Close()
+	defer func() {
+		if closeErr := f.Close(); closeErr != nil && err == nil {
+			err = closeErr
+		}
+	}()
 	stat, err := f.Stat()
 	if err != nil {
 		return 0, err

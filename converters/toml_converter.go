@@ -1,11 +1,12 @@
 package converters
 
 import (
-	"github.com/pelletier/go-toml"
-	"gopkg.in/yaml.v2"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/pelletier/go-toml"
+	"gopkg.in/yaml.v2"
 )
 
 type tomlConverter struct {
@@ -16,7 +17,11 @@ func (tomlConverter) ConvertToYaml(configFile string) ([]byte, error) {
 	if err != nil {
 		return []byte{}, err
 	}
-	defer f.Close()
+	defer func() {
+		if closeErr := f.Close(); closeErr != nil && err == nil {
+			err = closeErr
+		}
+	}()
 	tree, err := toml.LoadReader(f)
 	if err != nil {
 		return []byte{}, err
