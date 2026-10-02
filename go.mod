@@ -1,13 +1,13 @@
 module github.com/orange-cloudfoundry/config-patcher
 
-go 1.25.5
+go 1.26.0
 
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/krishicks/yaml-patch v0.0.10
 	github.com/pelletier/go-toml v1.9.5
-	github.com/prometheus/common v0.71.0
+	github.com/prometheus/common v0.72.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
