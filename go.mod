@@ -1,6 +1,6 @@
 module github.com/orange-cloudfoundry/config-patcher
 
-go 1.26.0
+go 1.27.4
 
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
@@ -16,5 +16,5 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/onsi/ginkgo v1.10.2 // indirect
 	github.com/onsi/gomega v1.7.0 // indirect
-	github.com/xhit/go-str2duration/v2 v2.1.0 // indirect
+	github.com/xhit/go-str2duration/v2 v2.2.0 // indirect
 )
